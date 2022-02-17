@@ -1,19 +1,88 @@
 .App {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header{
+  border: 2px solid black;
+  margin: 40px;
+  padding:40px;
+  background-color: #bcdbdf;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 40px;
+  padding:40px;
+  background-color:#35bcbf;
+}
+.header{
+  display: grid;
+}
+.container h2{
+  color: #585A56; 
+}
+.container h1{
+  color:#61082B
+}
+
+.withdraw{
+  background-color: #90f6d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+  padding: 20px;
+  border:2px solid #41506b;
+  margin:30px;
+}
+
+.deposit{
+  background-color: #90f6d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border:2px solid #41506b;
+  margin:30px;
+}
+
+.heading{
+  border: 2px solid black;
+  background-color: #41506b;
+  color:#90f6d7;
+  margin: 40px;
+}
+
+button {
+ background-color: #41506b;
+ color: #90f6d7;
+width: 100px;
+display: inline;
+margin: 10px;
+}
+
+.buttons{
+  display: inline-block;
+  gap: 10px;
+ 
+ 
+}
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +104,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -1,22 +1,28 @@
-
+import ATM from "./components/ATM"
 import './App.css';
+import { toggle } from "./redux/atmSlice"
+import { useSelector, useDispatch } from "react-redux"
+
 
 function App() {
+  const dispatch = useDispatch();
+
+  const toggleButton = () => {
+    dispatch(toggle());
+  }
+
+  const toggleAtmBtn = useSelector((state) => state.atm.toggleAtm);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2 style={{ color: "#41506b" }}>Welcome to the ATM</h2>
+        <div>
+          <button onClick={() => { toggleButton() }}>
+            {!toggleAtmBtn ? "Start ATM" : "Close ATM"}
+          </button>
+          {/* {toggleAtmBtn? <ATM/> : !<ATM/>} */}
+          {toggleAtmBtn && <ATM />}
+        </div>
       </header>
     </div>
   );
