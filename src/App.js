@@ -1,6 +1,6 @@
 import ATM from "./components/ATM"
 import './App.css';
-import { toggle } from "./redux/atmSlice"
+import { toggle, reset } from "./redux/atmSlice"
 import { useSelector, useDispatch } from "react-redux"
 
 
@@ -9,6 +9,10 @@ function App() {
 
   const toggleButton = () => {
     dispatch(toggle());
+  }
+//Resets the account amount to 1000 when we start the ATM again after closing 
+  const resetValue = () => {
+    dispatch(reset());
   }
 
   const toggleAtmBtn = useSelector((state) => state.atm.toggleAtm);
@@ -21,7 +25,8 @@ function App() {
             {!toggleAtmBtn ? "Start ATM" : "Close ATM"}
           </button>
           {/* {toggleAtmBtn? <ATM/> : !<ATM/>} */}
-          {toggleAtmBtn && <ATM />}
+          {toggleAtmBtn && <ATM />  }
+          {toggleAtmBtn &&  resetValue()}
         </div>
       </header>
     </div>

@@ -93,6 +93,9 @@ const atmSlice = createSlice({
         },
         toggle: (state) => {
             state.toggleAtm = !state.toggleAtm
+        },
+        reset: (state) => {
+            state.amount = 1000;
         }
     }
 })
@@ -108,5 +111,5 @@ export const { decrement100,
     increment200,
     increment500,
     increment1000,
-    toggle} = actions;
+    toggle,reset} = actions;
 export default reducer;
